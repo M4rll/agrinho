@@ -41,3 +41,26 @@ img {
 
 /* código omitido */
 
+
+body { 
+    background-color: lightblue;
+    font-family: Arial, sans-serif;
+}
+h1 {
+    color: navy;
+    text-aling: genter;
+}
+.minha-seção {
+    background-color: white;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px
+    rgba (0, 0, 0, 2);
+}
+
+.minha-seção p {
+    color: #333;
+}
+
+
