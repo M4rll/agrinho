@@ -1,0 +1,218 @@
+/* Import Google Fonts - garante que 'Chocolate Classical Sans', 'Rakkas' e 'Inter' estejam disponíveis */
+@import url('https://fonts.googleapis.com/css2?family=Chocolate+Classical+Sans&family=Rakkas&family=Inter:wght@300;400;700&display=swap');
+
+/* Variáveis para uma paleta de cores refinada e tipografia */
+:root {
+    --primary-color: #026773; /* Um tom de teal calmante */
+    --secondary-color: #3CA6A6; /* Um teal mais brilhante para destaque */
+    --text-color: #012E40; /* Azul-preto profundo para texto de alto contraste */
+    --background-color: #E6EEF5; /* Cinza muito claro e suave para o fundo, ligeiramente mais claro */
+    --accent-light: #C0E0E6; /* Um azul muito claro e arejado para acentos sutis, mais vibrante */
+    --button-hover: #004D59; /* Variante mais escura e intensa para estados de hover de botão */
+    --shadow-color: rgba(0, 0, 0, 0.15); /* Sombra mais visível para profundidade */
+    --deep-shadow-color: rgba(0, 0, 0, 0.25); /* Sombra mais pronunciada e escura para hover */
+
+    /* Tipografia */
+    --font-body: "Inter", sans-serif; /* Uma fonte sans-serif mais moderna e legível para o corpo do texto */
+    --font-titulo: "Rakkas", serif; /* Mantém 'Rakkas' para títulos, conforme solicitado */
+    --font-alt: "Chocolate Classical Sans", serif; /* Fonte alternativa para elementos específicos, se necessário */
+
+    /* Espaçamento */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 40px;
+    --spacing-xl: 64px;
+
+    /* Raio da Borda */
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 20px;
+    --border-radius-xl: 25px; /* Novo raio de borda para contêiner */
+}
+
+/* Reset Universal e Box-Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do Corpo para a estética geral da página */
+body {
+    /* Fundo com gradiente mais visível e dinâmico */
+    background: linear-gradient(135deg, var(--background-color) 0%, var(--accent-light) 100%);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.65; /* Altura da linha ligeiramente aumentada para melhor legibilidade */
+    font-size: 1.125rem; /* Tamanho da fonte base, equivalente a 18px */
+    -webkit-font-smoothing: antialiased; /* Renderização de fonte mais suave */
+    -moz-osx-font-smoothing: grayscale; /* Renderização de fonte mais suave para Firefox */
+    
+    /* Adições para centralizar o conteúdo verticalmente */
+    display: flex; /* Habilita o Flexbox */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+    margin: 0; /* Remove qualquer margem padrão do body */
+    padding: var(--spacing-md); /* Adiciona um padding ao body para evitar que o conteúdo toque as bordas */
+}
+
+/* Contêiner Principal de Conteúdo - Centralização e restrição de largura para melhor legibilidade */
+.container {
+    max-width: 950px; /* Largura máxima ajustada para um visual mais compacto e chamativo */
+    width: 95%; /* Garante que o contêiner não fique muito largo em telas grandes */
+    background-color: #FFFFFF; /* Fundo branco para o contêiner, destacando-o */
+    margin: 0 auto; /* Centraliza o contêiner */
+    padding: var(--spacing-xl); /* Preenchimento interno mais generoso para um visual premium */
+    text-align: center; /* Centraliza o texto dentro do container */
+    border-radius: var(--border-radius-xl); /* Cantos mais arredondados para um visual suave */
+    box-shadow: 0 20px 50px var(--shadow-color); /* Sombra mais proeminente para elevação */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Curva de animação mais dinâmica */
+}
+
+.container:hover {
+    transform: translateY(-12px) scale(1.01); /* Elevação e leve aumento mais notáveis no hover do container */
+    box-shadow: 0 30px 60px var(--deep-shadow-color); /* Sombra mais intensa e espalhada no hover */
+}
+
+/* Títulos - Estilos gerais */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-titulo);
+    color: var(--primary-color);
+    letter-spacing: 0.05em; /* Espaçamento de letras mais evidente para títulos */
+    margin-bottom: var(--spacing-sm);
+    font-weight: 800; /* Torna os títulos ainda mais ousados */
+}
+
+/* Ajustes Específicos de Título */
+h3 {
+    margin-top: var(--spacing-lg); /* Margem superior mais generosa para separação */
+    font-size: 2.8rem; /* Tamanho da fonte ainda maior para destaque */
+    line-height: 1.2;
+    text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2); /* Sombra de texto mais proeminente */
+}
+
+/* Parágrafos */
+p {
+    margin-top: var(--spacing-md); /* Margem superior consistente */
+    margin-bottom: var(--spacing-md);
+    font-size: 1.1rem; /* Ligeiramente maior para melhor leitura e impacto */
+    line-height: 1.8; /* Altura da linha aprimorada para parágrafos */
+    max-width: 650px; /* Restringe a largura do parágrafo para legibilidade ideal */
+    margin-left: auto; /* Centraliza parágrafos com max-width */
+    margin-right: auto; /* Centraliza parágrafos com max-width */
+    color: var(--text-color); /* Garante a cor do texto */
+}
+
+/* Imagens - Apresentação visual aprimorada */
+img {
+    max-width: 90%; /* Ajuste ligeiro na largura máxima */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove o espaço extra abaixo das imagens */
+    margin: var(--spacing-xl) auto; /* Centraliza as imagens e adiciona espaçamento vertical mais generoso */
+    border-radius: var(--border-radius-lg); /* Cantos mais arredondados para um visual mais suave */
+    box-shadow: 0 10px 25px var(--shadow-color); /* Sombra elegante */
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.5s ease, border-color 0.5s ease; /* Efeitos de hover mais exagerados e bouncy */
+    border: 4px solid transparent; /* Adiciona uma borda transparente para o efeito de hover */
+}
+
+img:hover {
+    transform: translateY(-15px) scale(1.03) rotateZ(1deg); /* Efeito de elevação, aumento e leve rotação ao passar o mouse */
+    box-shadow: 0 25px 55px var(--deep-shadow-color); /* Sombra muito mais pronunciada ao passar o mouse */
+    border-color: var(--secondary-color); /* Borda colorida mais forte no hover */
+}
+
+/* Exemplo de Estilo de Botão - Certifique-se de aplicar isso aos seus elementos de botão */
+.button {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-xl); /* Padding mais generoso e alongado */
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color)); /* Gradiente mais angular e vibrante */
+    color: #FFFFFF; /* Texto branco no botão */
+    font-family: var(--font-body);
+    font-weight: 800; /* Texto mais ousado */
+    text-decoration: none;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease, letter-spacing 0.3s ease; /* Transição mais dinâmica */
+    box-shadow: 0 8px 25px var(--shadow-color); /* Sombra inicial do botão mais forte */
+    letter-spacing: 0.08em; /* Espaçamento de letras inicial ligeiramente maior */
+    text-transform: uppercase; /* Texto em maiúsculas para maior impacto */
+}
+
+.button:hover {
+    background: linear-gradient(45deg, var(--primary-color), var(--button-hover)); /* Gradiente invertido/mais escuro e chamativo no hover */
+    transform: translateY(-5px) scale(1.03); /* Ligeira elevação e aumento mais notáveis ao passar o mouse */
+    box-shadow: 0 15px 35px var(--deep-shadow-color); /* Sombra mais pronunciada no hover */
+    letter-spacing: 0.15em; /* Aumento do espaçamento de letras mais significativo no hover */
+}
+
+.button:active {
+    transform: translateY(0); /* Efeito de "pressionar" ao clicar */
+    box-shadow: 0 3px 10px var(--shadow-color);
+}
+
+/* Links - Estilo básico para melhor legibilidade */
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    font-weight: 600; /* Links ligeiramente mais ousados */
+}
+
+a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-shadow: 0 0 8px rgba(50, 160, 160, 0.6); /* Sombra mais evidente no texto do link */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    body {
+        font-size: 1rem; /* Ajusta o tamanho da fonte base para telas menores */
+        padding: var(--spacing-sm);
+    }
+
+    .container {
+        padding: var(--spacing-md); /* Preenchimento ajustado em telas menores */
+        border-radius: var(--border-radius-lg); /* Cantos ligeiramente menores */
+    }
+
+    h3 {
+        font-size: 2.2rem; /* Tamanho do título menor */
+        margin-top: var(--spacing-md);
+    }
+
+    p {
+        font-size: 1rem; /* Parágrafos ligeiramente menores */
+        margin-top: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    img {
+        max-width: 100%; /* Imagens podem ocupar a largura total em telas pequenas */
+        margin: var(--spacing-md) auto;
+        border-radius: var(--border-radius-md); /* Cantos menores para imagens */
+    }
+
+    .button {
+        padding: var(--spacing-sm) var(--spacing-md); /* Padding ajustado para botões */
+        font-size: 0.95rem;
+    }
+}
+
+/* Media Queries para telas muito pequenas */
+@media (max-width: 480px) {
+    .container {
+        padding: var(--spacing-sm);
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+}
